@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,7 +22,14 @@ namespace ConsoleApp1
             }
             sr.Close();
 
-          
+            //unsorted values
+            Console.Write("Before Sorting Array : ");
+            foreach (int item in intArray)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+            Console.ReadKey();
             //Sorting the array - Bubble Sort
             bool flag = true;
             int count = 0;
@@ -32,7 +39,7 @@ namespace ConsoleApp1
                 for (int j = 0; j < (intArray.Length - 1); j++)
                 {
                     count = count + 1;
-                    if (intArray[j + 1] > intArray[j])
+                    if (intArray[j + 1] < intArray[j])
                     {
                         int temp = intArray[j];
                         intArray[j] = intArray[j + 1];
@@ -40,8 +47,16 @@ namespace ConsoleApp1
                         flag = true;
                     }
                 }
-            }                  
-           
+            }
+
+            //Sorted values       
+            Console.Write("After Sorting Array : ");
+            foreach (int item in intArray)
+            {
+                Console.WriteLine(item + " ");
+            }
+            Console.WriteLine("The Loop iterates :" + count);
+            Console.ReadKey();
             //Write the sorted numbers
             string outputPath = "C:\\Users\\VETRI VIJAY PANDIAN\\source\\repos\\ConsoleApp1\\ConsoleApp1\\OutputFile.txt";
             StreamWriter sw = new StreamWriter(outputPath);
